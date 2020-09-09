@@ -1,6 +1,6 @@
 import app from "./app";
 
-console.log("hello world");
+console.log("hello world.......");
 
 const server = app.listen(app.get("port"), () => {
   console.group();
