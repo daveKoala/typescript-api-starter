@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import cors from 'cors';
-import { setAPIVersion } from "./middleware/setAPIVersion";
+import { setAPIVersion } from './middleware/setAPIVersion';
 const app = express();
 
 app.set('port', process.env.PORT || 3000);

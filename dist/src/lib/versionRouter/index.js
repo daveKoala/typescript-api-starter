@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const versionRouter = (versionsMap = new Map(), options = new Map()) => {
-    return (req: Request, res: Response, next: NextFunction) => {
+    return (req, res, next) => {
         try {
             for (const [key, routerMethod] of versionsMap) {
                 if (key === req.version) {
@@ -9,10 +9,10 @@ const versionRouter = (versionsMap = new Map(), options = new Map()) => {
                 }
             }
             res.status(200).json({ woa: 'cowboy' });
-        } catch (error) {
+        }
+        catch (error) {
             next(error);
         }
     };
 };
-
-export default versionRouter;
+exports.default = versionRouter;
