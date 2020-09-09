@@ -1,4 +1,8 @@
 import app from './app';
+import { helloRouter } from "./services/hello/hello.router";
+
+// Routers
+app.use("/hi", helloRouter);
 
 const server = app.listen(app.get('port'), () => {
     console.group();
