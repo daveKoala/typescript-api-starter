@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
+import errors from "../errors"
 
 const versionRouter = (versionsMap = new Map(), options = new Map()) => {
   return (req: Request, res: Response, next: NextFunction) => {
@@ -8,7 +9,7 @@ const versionRouter = (versionsMap = new Map(), options = new Map()) => {
           return routerMethod(req, res, next);
         }
       }
-      res.status(200).json({ woa: 'cowboy' });
+      throw new errors.APIInvalidHeader("Missing or invalid api version")
     } catch (error) {
       next(error);
     }
