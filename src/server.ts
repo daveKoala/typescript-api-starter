@@ -4,11 +4,15 @@ import {pingzRouter} from "./services/pingz/pingz.router"
 import { Request, Response, NextFunction } from 'express';
 import middleware from './middleware';
 import errors from './lib/errors';
+import swaggerUI from "swagger-ui-express";
+import {swaggerDocument} from "./swagger";
 
 // Routers
 app
 .use('/hi', helloRouter)
 .use("/pingz", pingzRouter);
+
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app
   .use('*', (req: Request, res: Response, next: NextFunction) => {

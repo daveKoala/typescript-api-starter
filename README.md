@@ -58,6 +58,9 @@ What API version is called by the client is controlled by a key value pair in th
 ```
 If no key value pair is found or the version does not exist then an error is returned
 
+## API docs
+https://levelup.gitconnected.com/the-simplest-way-to-add-swagger-to-a-node-js-project-c2a4aa895a3c
+
 ## Error handling
 There are a number of custom error methods that extend the defaut Error object. Feel free to add your own.
 
