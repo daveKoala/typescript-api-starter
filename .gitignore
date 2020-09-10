@@ -3,7 +3,8 @@ logs
 *.log
 
 # Build files
-dit/
+dist
+build
 
 # Dependency directories
 node_modules/
