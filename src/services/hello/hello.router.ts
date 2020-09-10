@@ -2,8 +2,8 @@ import express, { Request, Response, NextFunction } from 'express';
 import versionRouter from '../../lib/versionRouter';
 import middleware from '../../middleware';
 
-import * as Apple from './hello.controller';
-import * as Orange from './helloV2.controller';
+import * as Apple from './hello.controllers';
+import * as Orange from './helloV2.controllers';
 
 export const helloRouter = express.Router();
 
