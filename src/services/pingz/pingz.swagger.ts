@@ -1,40 +1,39 @@
 export const getPingz = {
   tags: ['health check'],
-  description: "Returns infomation on the server status",
+  description: 'Returns infomation on the server status',
   operationId: 'getPingz',
   security: [
     {
-      bearerAuth: []
-    }
+      bearerAuth: [],
+    },
   ],
   responses: {
-    "200": {
-      description: "Server info",
-      "content": {
-        "application/json": {
+    '200': {
+      description: 'Server info',
+      content: {
+        'application/json': {
           schema: {
-            type: "object",
+            type: 'object',
             example: {
-              appName: "the app name",
+              appName: 'the app name',
               dateTime: new Date().toISOString(),
-              apiDocs: "/api-docs"
+              apiDocs: '/api-docs',
             },
-            properties:
-            {
+            properties: {
               appName: {
-                type: "string"
+                type: 'string',
               },
               dateTime: {
-                type: "string",
-                description: "Server date time"
+                type: 'string',
+                description: 'Server date time',
               },
               apiDocs: {
-                type: "string"
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-} 
+                type: 'string',
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};

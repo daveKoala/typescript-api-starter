@@ -69,3 +69,6 @@ To use them just throw a custom error.
 throw new error.NotFoundError("my message");
 ```
 These are handled by the ErrorHandler middleware. Notice that it is last middleware in the chain. See ```./src/server.ts```
+
+## Webpack?
+Yep there is no Webpack used. I am happy with the complied files being seperate and any negative effects outweigh the additional complexity and maintenance woes I have experienced in the past. 

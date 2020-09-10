@@ -1,4 +1,4 @@
-import { getPingz } from "./services/pingz/pingz.swagger";
+import { getPingz } from './services/pingz/pingz.swagger';
 
 export const swaggerDocument = {
   openapi: '3.0.1',
@@ -10,7 +10,7 @@ export const swaggerDocument = {
     contact: {
       name: 'Dave Clare',
       email: 'mr.d.clare@gmail.com',
-      url: 'https://koala-moon.com'
+      url: 'https://koala-moon.com',
     },
     // license: {
     //   name: 'Apache 2.0',
@@ -20,16 +20,16 @@ export const swaggerDocument = {
   servers: [
     {
       url: 'http://localhost:3000/api/',
-      description: 'Local server'
+      description: 'Local server',
     },
     {
       url: 'https://test.herokuapp.com/api/',
-      description: 'DEV Env'
+      description: 'DEV Env',
     },
     {
       url: 'https://prod.herokuapp.com/api/',
-      description: 'UAT Env'
-    }
+      description: 'UAT Env',
+    },
   ],
   components: {
     schemas: {},
@@ -37,14 +37,14 @@ export const swaggerDocument = {
       bearerAuth: {
         type: 'http',
         scheme: 'bearer',
-        bearerFormat: 'JWT'
-      }
-    }
+        bearerFormat: 'JWT',
+      },
+    },
   },
   tags: [],
   paths: {
-    "/pingz": {
-      "get": getPingz
-    }
-  }
-}
+    '/pingz': {
+      get: getPingz,
+    },
+  },
+};

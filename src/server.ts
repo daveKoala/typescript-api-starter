@@ -1,19 +1,19 @@
 import app from './app';
 import { helloRouter } from './services/hello/hello.router';
-import {pingzRouter} from "./services/pingz/pingz.router"
+import { pingzRouter } from './services/pingz/pingz.router';
 import { Request, Response, NextFunction } from 'express';
 import middleware from './middleware';
 import errors from './lib/errors';
-import swaggerUI from "swagger-ui-express";
-import {swaggerDocument} from "./swagger";
+import swaggerUI from 'swagger-ui-express';
+import { swaggerDocument } from './swagger';
 
 // Routers
 app
-.use('/hi', helloRouter)
-.use("/pingz", pingzRouter);
+  .use('/hi', helloRouter)
+  .use('/pingz', pingzRouter)
+  .use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
-app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
-
+  // Catch all and error handling
 app
   .use('*', (req: Request, res: Response, next: NextFunction) => {
     next(new errors.NotFoundError('Not found'));
