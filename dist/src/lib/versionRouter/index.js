@@ -1,5 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const errors_1 = __importDefault(require("../errors"));
 const versionRouter = (versionsMap = new Map(), options = new Map()) => {
     return (req, res, next) => {
         try {
@@ -8,7 +12,7 @@ const versionRouter = (versionsMap = new Map(), options = new Map()) => {
                     return routerMethod(req, res, next);
                 }
             }
-            res.status(200).json({ woa: 'cowboy' });
+            throw new errors_1.default.APIInvalidHeader('Missing or invalid api version');
         }
         catch (error) {
             next(error);
@@ -16,3 +20,4 @@ const versionRouter = (versionsMap = new Map(), options = new Map()) => {
     };
 };
 exports.default = versionRouter;
+//# sourceMappingURL=index.js.map

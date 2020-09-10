@@ -2,15 +2,16 @@ import app from './app';
 import { helloRouter } from './services/hello/hello.router';
 import { Request, Response, NextFunction } from 'express';
 import middleware from './middleware';
-import errors from "./lib/errors"
+import errors from './lib/errors';
 
 // Routers
 app.use('/hi', helloRouter);
 
-app.use('*', (req: Request, res: Response, next: NextFunction) => {
-  next(new errors.NotFoundError("Not found"))
-})
-.use(middleware.errorHandler);
+app
+  .use('*', (req: Request, res: Response, next: NextFunction) => {
+    next(new errors.NotFoundError('Not found'));
+  })
+  .use(middleware.errorHandler);
 
 const server = app.listen(app.get('port'), () => {
   console.group();

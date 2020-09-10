@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import versionRouter from '../../lib/versionRouter';
+import middleware from '../../middleware';
 
 export const helloRouter = express.Router();
 
@@ -24,4 +25,4 @@ routeMap2.set('apple', (req: Request, res: Response, next: NextFunction) => {
 routeMap2.set('orange', (req: Request, res: Response, next: NextFunction) => {
   return res.status(200).json({ message: 'POST: version orange' });
 });
-helloRouter.post('/bye', versionRouter(routeMap2));
+helloRouter.post('/bye', middleware.authentication, middleware.authorization('a role'), versionRouter(routeMap2));

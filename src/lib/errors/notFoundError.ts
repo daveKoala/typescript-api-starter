@@ -1,12 +1,12 @@
-import BaseError from "./baseError";
-import { errors } from "../../config/errorMessages";
+import BaseError from './baseError';
+import { errors } from '../../config/errorMessages';
 
 class NotFoundError extends BaseError {
+  info: { id: string; message: string };
+  statusCode: number;
   constructor(message: string) {
     super(message);
-    // @ts-ignore
     this.info = errors.notFound;
-    // @ts-ignore
     this.statusCode = 404;
   }
 }

@@ -1,13 +1,13 @@
-import BaseError from "./baseError";
-import { errors } from "../../config/errorMessages";
+import BaseError from './baseError';
+import { errors } from '../../config/errorMessages';
 
 class InternalServerError extends BaseError {
+  info: { id: string; message: string };
+  statusCode: number;
   constructor(message: string) {
     super(message);
     Object.setPrototypeOf(this, InternalServerError.prototype);
-    // @ts-ignore
     this.info = errors.internalServerError;
-    // @ts-ignore
     this.statusCode = 500;
   }
 }

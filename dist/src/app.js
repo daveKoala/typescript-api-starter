@@ -7,10 +7,11 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const helmet_1 = __importDefault(require("helmet"));
 const cors_1 = __importDefault(require("cors"));
-const setAPIVersion_1 = require("./middleware/setAPIVersion");
+const middleware_1 = __importDefault(require("./middleware"));
 const app = express_1.default();
 app.set('port', process.env.PORT || 3000);
 app.use(body_parser_1.default.json()).use(helmet_1.default()).use(cors_1.default());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
-app.use(setAPIVersion_1.setAPIVersion);
+app.use(middleware_1.default.setAPIVersion);
 exports.default = app;
+//# sourceMappingURL=app.js.map

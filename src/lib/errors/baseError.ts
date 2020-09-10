@@ -1,4 +1,7 @@
 class BaseError extends Error {
+  info: any;
+  statusCode: number | undefined;
+  
   constructor(message: string) {
     super(message);
     Object.setPrototypeOf(this, BaseError.prototype);
@@ -8,7 +11,7 @@ class BaseError extends Error {
       // @ts-ignore
       Error.captureStackTrace(this, this.constructor.name);
     } else {
-      this.stack = (new Error(message)).stack;
+      this.stack = new Error(message).stack;
     }
   }
 }
