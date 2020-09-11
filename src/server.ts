@@ -1,7 +1,7 @@
 import app from './app';
 import { helloRouter } from './services/hello/hello.router';
 import { pingzRouter } from './services/pingz/pingz.router';
-import { noteRouter } from "./services/notes/notes.router";
+import { noteRouter } from './services/notes/notes.router';
 import { Request, Response, NextFunction } from 'express';
 import middleware from './middleware';
 import errors from './lib/errors';
@@ -12,7 +12,7 @@ import { swaggerDocument } from './swagger';
 app
   .use('/hi', helloRouter)
   .use('/pingz', pingzRouter)
-  .use("/note", noteRouter)
+  .use('/note', noteRouter)
   .use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // Catch all and error handling

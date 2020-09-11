@@ -1,4 +1,4 @@
-import faker from "faker";
+import faker from 'faker';
 
 export interface Note {
   _id: string;
@@ -29,12 +29,12 @@ const mockNotes = (n: number): Note[] => {
       updatedOn: updatedOn.toISOString(),
       content,
       locked,
-      user
+      user,
     };
 
     notes.push(note);
   }
 
   return notes;
-}
+};
 export default mockNotes;
