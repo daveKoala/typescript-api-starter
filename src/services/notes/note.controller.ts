@@ -1,10 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
-import errors from '../../lib/errors';
+import mockNotes from './mockNotes';
 
 export const fetchAll = (req: Request, res: Response, next: NextFunction) => {
   try {
-    throw new errors.ForbiddenError()
-    // return res.status(200).json({ message: 'GET: version ORANGE' });
+    return res.status(200).json({ notes: mockNotes });
   } catch (error) {
     next(error);
   }

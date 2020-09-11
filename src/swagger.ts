@@ -3,7 +3,7 @@ import { getPingz } from './services/pingz/pingz.swagger';
 export const swaggerDocument = {
   openapi: '3.0.1',
   info: {
-    version: '1.0.0',
+    version: 'Apple',
     title: 'APIs Document',
     description: 'your description here',
     termsOfService: '',
