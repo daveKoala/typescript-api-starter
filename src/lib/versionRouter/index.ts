@@ -9,7 +9,7 @@ const versionRouter = (versionsMap = new Map(), options = new Map()) => {
           return routerMethod(req, res, next);
         }
       }
-      throw new errors.APIInvalidHeader('Missing or invalid api version');
+      throw new errors.APIInvalidHeader();
     } catch (error) {
       next(error);
     }
