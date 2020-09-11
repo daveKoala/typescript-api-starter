@@ -1,6 +1,20 @@
 export const getPingz = {
+  parameters: [
+    {
+      name: "Accept-version", 
+      in: "header", 
+      description: "API Version",
+      required: true,
+      schema: {
+        type: "string",
+        example: "v2",
+        nullable: true,
+      }
+    }
+  ],
   tags: ['health check'],
   description: 'Returns infomation on the server status',
+  summary: "",
   operationId: 'getPingz',
   security: [
     {
