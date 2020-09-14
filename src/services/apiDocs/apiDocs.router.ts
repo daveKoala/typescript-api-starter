@@ -12,7 +12,7 @@ apiDocsRouter.use('/', swaggerUI.serve, (req: Request, res: Response, next: Next
   try {
     const options: swaggerUI.SwaggerOptions = {
       explorer: true,
-      openapi: '3.0.1',
+      customSiteTitle: "my-api-server",
       swaggerOptions: {
         urls: [
           {
