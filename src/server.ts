@@ -2,17 +2,13 @@ import app from './app';
 import { helloRouter } from './services/hello/hello.router';
 import { pingzRouter } from './services/pingz/pingz.router';
 import { noteRouter } from './services/notes/notes.router';
-import { apiDocsRouter } from "./services/apiDocs/apiDocs.router";
+import { apiDocsRouter } from './services/apiDocs/apiDocs.router';
 import { Request, Response, NextFunction } from 'express';
 import middleware from './middleware';
 import errors from './lib/errors';
 
 // Routers
-app
-  .use('/hi', helloRouter)
-  .use('/pingz', pingzRouter)
-  .use('/note', noteRouter)
-  .use('/api-docs', apiDocsRouter);
+app.use('/hi', helloRouter).use('/pingz', pingzRouter).use('/note', noteRouter).use('/api-docs', apiDocsRouter);
 
 // Catch all and error handling
 app

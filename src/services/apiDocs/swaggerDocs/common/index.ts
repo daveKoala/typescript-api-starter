@@ -2,7 +2,7 @@ export const contact = {
   name: 'Dave Clare',
   email: 'mr.d.clare@gmail.com',
   url: 'https://koala-moon.com',
-}
+};
 
 export const servers = [
   {
@@ -21,8 +21,8 @@ export const servers = [
 
 export const license = {
   name: 'Apache 2.0',
-  url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
-}
+  url: 'https://www.apache.org/licenses/LICENSE-2.0.html',
+};
 
 export const info = {
   version: 'Orange',
@@ -31,7 +31,7 @@ export const info = {
   termsOfService: '',
   contact,
   license,
-}
+};
 
 export const securitySchemes = {
   bearerAuth: {
@@ -39,4 +39,4 @@ export const securitySchemes = {
     scheme: 'bearer',
     bearerFormat: 'JWT',
   },
-}
+};

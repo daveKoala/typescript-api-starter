@@ -1,14 +1,14 @@
 import { getPingz } from '../../pingz/pingz.swagger';
-import {info, servers, securitySchemes } from "./common";
+import { info, servers, securitySchemes } from './common';
 
 export const swaggerDocument = {
   openapi: '3.0.1',
-  info: { ...info, version: "Orange" },
+  info: { ...info, version: 'Orange' },
   servers,
   components: {
     schemas: {
       Pingz: {
-        description: "Health check and end point for K8 + basic service info",
+        description: 'Health check and end point for K8 + basic service info',
         example: {
           appName: 'the app name',
           dateTime: new Date().toISOString(),
@@ -30,14 +30,14 @@ export const swaggerDocument = {
       User: {
         properties: {
           id: {
-            type: "integer"
+            type: 'integer',
           },
           name: {
-            type: "string"
-          }
-        }
-      }
-    }
+            type: 'string',
+          },
+        },
+      },
+    },
   },
   securitySchemes,
   tags: [],

@@ -12,11 +12,9 @@ export const getPingz = {
       },
     },
   ],
-  tags: ['health check', "apple", "orange"],
+  tags: ['health check', 'apple', 'orange'],
   description: 'Returns infomation on the server status',
-  produces: [
-    "application/json"
-  ],
+  produces: ['application/json'],
   summary: '',
   operationId: 'getPingz',
   security: [
@@ -30,14 +28,11 @@ export const getPingz = {
       content: {
         'application/json': {
           schema: {
-            oneOf: [
-              { $ref: "#/components/schemas/Pingz" },
-              { $ref: "#/components/schemas/User" }
-            ],
+            oneOf: [{ $ref: '#/components/schemas/Pingz' }, { $ref: '#/components/schemas/User' }],
           },
         },
       },
     },
-    400: {}
+    400: {},
   },
 };
