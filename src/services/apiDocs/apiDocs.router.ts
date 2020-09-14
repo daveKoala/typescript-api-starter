@@ -12,7 +12,7 @@ apiDocsRouter.use('/', swaggerUI.serve, (req: Request, res: Response, next: Next
   try {
     const options: swaggerUI.SwaggerOptions = {
       explorer: true,
-      customSiteTitle: "my-api-server",
+      customSiteTitle: 'my-api-server',
       swaggerOptions: {
         urls: [
           {
@@ -26,6 +26,7 @@ apiDocsRouter.use('/', swaggerUI.serve, (req: Request, res: Response, next: Next
         ],
       },
     };
+    // eslint-disable-next-line
     // @ts-ignore
     return swaggerUI.setup(null, options)(req, res, next);
   } catch (error) {

@@ -1,17 +1,5 @@
 import faker from 'faker';
-
-export interface Note {
-  _id: string;
-  createdOn: string;
-  updatedOn: string;
-  deleted?: {
-    deletedOn: string;
-    user: string;
-  };
-  content: string;
-  locked: boolean;
-  user: string;
-}
+import { Note } from './notes.interfaces';
 
 const mockNotes = (n: number): Note[] => {
   const notes: Note[] = [];
