@@ -7,13 +7,16 @@ export const getPingz = {
       required: true,
       schema: {
         type: 'string',
-        example: 'v2',
+        example: 'Apple',
         nullable: true,
       },
     },
   ],
-  tags: ['health check'],
+  tags: ['health check', "apple", "orange"],
   description: 'Returns infomation on the server status',
+  produces: [
+    "application/json"
+  ],
   summary: '',
   operationId: 'getPingz',
   security: [
@@ -27,27 +30,14 @@ export const getPingz = {
       content: {
         'application/json': {
           schema: {
-            type: 'object',
-            example: {
-              appName: 'the app name',
-              dateTime: new Date().toISOString(),
-              apiDocs: '/api-docs',
-            },
-            properties: {
-              appName: {
-                type: 'string',
-              },
-              dateTime: {
-                type: 'string',
-                description: 'Server date time',
-              },
-              apiDocs: {
-                type: 'string',
-              },
-            },
+            oneOf: [
+              { $ref: "#/components/schemas/Pingz" },
+              { $ref: "#/components/schemas/User" }
+            ],
           },
         },
       },
     },
+    400: {}
   },
 };

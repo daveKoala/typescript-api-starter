@@ -23,4 +23,8 @@ export const errors = {
     id: 'api_invalid_header',
     message: 'Check the request header defines the api version',
   },
+  apiDocs: {
+    id: 'api_version',
+    message: 'Invalid API Docs version request',
+  },
 };
