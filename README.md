@@ -8,7 +8,7 @@ This project is running inside a Kubernetes cluster of micro services. Access is
 ## Install and run
 ### Clone
 ```
-git clone {{repo url}}
+git clone https://github.com/daveKoala/typescript-api-starter.git
 ```
 ### Install
 ```
