@@ -25,6 +25,11 @@ npm run dev
 ```
 npm run build
 ```
+If you want to run the built code.
+```
+node dist/server.js
+```
+
 ### Unit tests
 There are two test commands.
 
