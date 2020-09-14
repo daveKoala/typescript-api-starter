@@ -1,9 +1,8 @@
 # Project: name
 A Node.js, Express, Typescript API server that supports:
-Swagger API documentation (version requested in the request header)
-Custom Error handling
-Both Authenication and Authorization middleware
-This project is running inside a Kubernetes cluster of micro services. Access is controlled by an authentication token managed elsewhere.
+- Swagger API documentation (version requested in the request header)
+- Custom Error handling
+- Both Authenication and Authorization middleware
 
 ## Install and run
 ### Clone
