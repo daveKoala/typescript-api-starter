@@ -12,7 +12,7 @@ export const getPingz = {
       },
     },
   ],
-  tags: ['health check', 'apple', 'orange'],
+  tags: ['health check'],
   description: 'Returns infomation on the server status',
   produces: ['application/json'],
   summary: '',
@@ -28,7 +28,7 @@ export const getPingz = {
       content: {
         'application/json': {
           schema: {
-            oneOf: [{ $ref: '#/components/schemas/Pingz' }, { $ref: '#/components/schemas/User' }],
+            $ref: '#/components/schemas/Pingz',
           },
         },
       },

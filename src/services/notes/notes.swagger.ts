@@ -12,7 +12,7 @@ export const getNotesAll = {
       },
     },
   ],
-  tags: ['health check', 'apple', 'orange'],
+  tags: ['notes'],
   description: 'Returns infomation on the server status',
   produces: ['application/json'],
   summary: '',

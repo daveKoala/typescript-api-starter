@@ -32,11 +32,14 @@ export const User = {
 };
 
 export const Deleted = {
-  deletedOn: {
-    type: 'string',
-  },
-  user: {
-    $ref: '#/components/schemas/User',
+  properties: {
+    deletedOn: {
+      type: 'string',
+      example: '2020-09-14T12:01:45.807Z',
+    },
+    user: {
+      $ref: '#/components/schemas/User',
+    },
   },
 };
 
