@@ -11,7 +11,7 @@ export const infoBlock = {
   ]
 };
 export const notes = {
-  '/notes/all': {
+  '/note/all': {
     get: {
       ...infoBlock,
       description: "Get all notes",
@@ -46,7 +46,7 @@ export const notes = {
       },
     }
   },
-  '/notes/{note_id}': {
+  '/note/{note_id}': {
     get: {
       ...infoBlock,
       description: "Get note by ID",

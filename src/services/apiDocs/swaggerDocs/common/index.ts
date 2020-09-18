@@ -6,15 +6,15 @@ export const contact = {
 
 export const servers = [
   {
-    url: 'http://localhost:3000/api/',
+    url: 'http://localhost:3000/',
     description: 'Local server',
   },
   {
-    url: 'https://test.koala-moon.com/api/',
+    url: 'https://test.koala-moon.com/',
     description: 'Test Env',
   },
   {
-    url: 'https://prod.koala-moon.com/api/',
+    url: 'https://prod.koala-moon.com/',
     description: 'Prod Env',
   },
 ];
