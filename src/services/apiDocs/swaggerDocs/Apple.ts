@@ -1,5 +1,5 @@
-import { getPingz } from '../../pingz/pingz.swagger';
-import { getNotesAll } from '../../notes/notes.swagger';
+import { pingz } from '../../pingz/pingz.swagger';
+import { notes } from '../../notes/notes.swagger';
 import { servers, info, securitySchemes } from './common';
 import { Pingz, User, Note, Deleted } from './common/schemas';
 
@@ -18,11 +18,7 @@ export const swaggerDocument = {
   securitySchemes,
   tags: [],
   paths: {
-    '/pingz': {
-      get: getPingz,
-    },
-    '/notes/all': {
-      get: getNotesAll,
-    },
+    ...pingz,
+    ...notes
   },
 };
