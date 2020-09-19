@@ -15,8 +15,8 @@ export const pingz = {
         },
       ],
       tags: ['health check'],
-      description: 'Returns infomation on the server status',
-      produces: ['application/json'],
+      description: 'Returns information on the server status',
+      produces: ['application/json', 'charset=utf-8'],
       summary: '',
       operationId: 'getPingz',
       security: [
@@ -28,7 +28,7 @@ export const pingz = {
         '200': {
           description: 'Server info',
           content: {
-            'application/json': {
+            'application/json; charset=utf-8': {
               schema: {
                 $ref: '#/components/schemas/Pingz',
               },

@@ -1,38 +1,31 @@
+import { acceptVersion } from "../apiDocs/swaggerDocs/common"
+
 export const infoBlock = {
   tags: ['notes'],
   description: '',
-  produces: ['application/json'],
+  produces: ['application/json', 'charset=utf-8'],
   summary: 'Notes',
-  // operationId: 'getPingz',
+  // operationId: 'getPingz', // Have this value equal the controller/service method
   security: [
     {
       bearerAuth: [],
     },
   ]
 };
+
 export const notes = {
   '/note/all': {
     get: {
       ...infoBlock,
       description: "Get all notes",
       parameters: [
-        {
-          name: 'Accept-version',
-          in: 'header',
-          description: 'API Version',
-          required: true,
-          schema: {
-            type: 'string',
-            example: 'Apple',
-            nullable: true,
-          },
-        },
+        acceptVersion,
       ],
       responses: {
         '200': {
           description: 'Collection of notes',
           content: {
-            'application/json': {
+            'application/json; charset=utf-8': {
               schema: {
                 type: 'array',
                 items: {
@@ -51,17 +44,7 @@ export const notes = {
       ...infoBlock,
       description: "Get note by ID",
       parameters: [
-        {
-          name: 'Accept-version',
-          in: 'header',
-          description: 'API Version',
-          required: true,
-          schema: {
-            type: 'string',
-            example: 'Apple',
-            nullable: true,
-          },
-        },
+        acceptVersion,
         {
           name: 'note id',
           in: 'params',
@@ -77,7 +60,7 @@ export const notes = {
         '200': {
           description: 'Collection of notes',
           content: {
-            'application/json': {
+            'application/json; charset=utf-8': {
               schema: {
                 type: 'object',
                 $ref: '#/components/schemas/Note',
@@ -92,17 +75,7 @@ export const notes = {
       ...infoBlock,
       description: "Delete note by ID",
       parameters: [
-        {
-          name: 'Accept-version',
-          in: 'header',
-          description: 'API Version',
-          required: true,
-          schema: {
-            type: 'string',
-            example: 'Apple',
-            nullable: true,
-          },
-        },
+        acceptVersion,
         {
           name: 'note id',
           in: 'params',
@@ -118,7 +91,7 @@ export const notes = {
         '200': {
           description: 'Collection of notes',
           content: {
-            'application/json': {
+            'application/json; charset=utf-8': {
               schema: {
                 type: 'object',
                 $ref: '#/components/schemas/Note',
@@ -133,17 +106,7 @@ export const notes = {
       ...infoBlock,
       description: "Update note by ID",
       parameters: [
-        {
-          name: 'Accept-version',
-          in: 'header',
-          description: 'API Version',
-          required: true,
-          schema: {
-            type: 'string',
-            example: 'Apple',
-            nullable: true,
-          },
-        },
+        acceptVersion,
         {
           name: 'note id',
           in: 'params',
@@ -159,7 +122,7 @@ export const notes = {
         '200': {
           description: 'Collection of notes',
           content: {
-            'application/json': {
+            'application/json; charset=utf-8': {
               schema: {
                 type: 'object',
                 $ref: '#/components/schemas/Note',
@@ -174,17 +137,7 @@ export const notes = {
       ...infoBlock,
       description: "Validate note exists by ID",
       parameters: [
-        {
-          name: 'Accept-version',
-          in: 'header',
-          description: 'API Version',
-          required: true,
-          schema: {
-            type: 'string',
-            example: 'Apple',
-            nullable: true,
-          },
-        },
+        acceptVersion,
         {
           name: 'note id',
           in: 'params',

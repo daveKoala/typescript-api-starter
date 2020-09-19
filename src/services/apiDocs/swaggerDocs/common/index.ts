@@ -6,15 +6,15 @@ export const contact = {
 
 export const servers = [
   {
-    url: 'http://localhost:3000/',
+    url: 'http://localhost:3000',
     description: 'Local server',
   },
   {
-    url: 'https://test.koala-moon.com/',
+    url: 'https://test.koala-moon.com',
     description: 'Test Env',
   },
   {
-    url: 'https://prod.koala-moon.com/',
+    url: 'https://prod.koala-moon.com',
     description: 'Prod Env',
   },
 ];
@@ -40,3 +40,18 @@ export const securitySchemes = {
     bearerFormat: 'JWT',
   },
 };
+
+
+export const acceptVersion = {
+  name: 'Accept-version',
+  in: 'header',
+  description: 'API Version',
+  required: true,
+  example: 'Apple',
+  schema: {
+    type: 'string',
+    example: 'Apple',
+    nullable: false,
+    required: true,
+  },
+}

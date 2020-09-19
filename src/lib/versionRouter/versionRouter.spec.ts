@@ -13,7 +13,7 @@ describe('versionRouter', () => {
     });
   });
 
-  it('Vaild api version', () => {
+  it('Valid api version', () => {
     const clientRequest = { version: requestedVersion };
     const mw = versionRouter(testMap);
     const r = mw((clientRequest as unknown) as Request, {} as Response, () => {

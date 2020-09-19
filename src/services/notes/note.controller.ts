@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import errors from '../../lib/errors';
 import mockNotes from './mockNotes';
+import { getNoteById } from "./note.service";
 
 export const fetchAll = (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -20,12 +20,9 @@ export const fetchAFew = (req: Request, res: Response, next: NextFunction) => {
 
 export const fetchById = (req: Request, res: Response, next: NextFunction) => {
   try {
-    const _id = req.params.id || null;
-    if (_id === 'xxxx') {
-      throw new errors.NotFoundError(`Document with an ID: "${_id}" is not found`);
-    } else {
-      return res.status(200).json({ results: { ...mockNotes(2)[0], _id } });
-    }
+    const id: string = req.params.id as string;
+    const note = getNoteById(id);
+    return res.status(200).json({ results: { ...note }, id });
   } catch (error) {
     next(error);
   }
