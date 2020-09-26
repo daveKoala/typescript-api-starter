@@ -27,3 +27,20 @@ export const fetchById = (req: Request, res: Response, next: NextFunction) => {
     next(error);
   }
 };
+
+export const deleteById = (req: Request, res: Response, next: NextFunction) => {
+  try {
+    console.log("deleteById deleteById deleteById")
+    return res.status(204).end();
+  } catch (error) {
+    next(error);
+  }
+};
+export const updateNote = (req: Request, res: Response, next: NextFunction) => {
+  try {
+    console.log("updateNote updateNote updateNote updateNote");
+    return res.status(204).end();
+  } catch (error) {
+    next(error);
+  }
+};

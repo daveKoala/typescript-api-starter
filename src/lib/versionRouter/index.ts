@@ -4,8 +4,9 @@ import errors from '../errors';
 const versionRouter = (versionsMap = new Map(), options = new Map()) => {
   return (req: Request, res: Response, next: NextFunction) => {
     try {
+      const version = req.version?.toLowerCase();
       for (const [key, routerMethod] of versionsMap) {
-        if (key === req.version) {
+        if (key === version) {
           return routerMethod(req, res, next);
         }
       }

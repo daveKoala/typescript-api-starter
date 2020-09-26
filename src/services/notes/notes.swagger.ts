@@ -88,16 +88,8 @@ export const notes = {
         },
       ],
       responses: {
-        '200': {
-          description: 'Collection of notes',
-          content: {
-            'application/json; charset=utf-8': {
-              schema: {
-                type: 'object',
-                $ref: '#/components/schemas/Note',
-              },
-            },
-          },
+        '204': {
+          description: 'Deleted',
         },
         400: {},
       },
@@ -119,8 +111,8 @@ export const notes = {
         },
       ],
       responses: {
-        '200': {
-          description: 'Collection of notes',
+        '204': {
+          description: 'Update a note',
           content: {
             'application/json; charset=utf-8': {
               schema: {
