@@ -15,6 +15,10 @@ export const errors = {
     id: 'forbidden',
     message: 'You do not have access for the attempted action.',
   },
+  cache: {
+    id: 'cache',
+    message: 'There is a problem with the cache',
+  },
   internalServerError: {
     id: 'internal_server_error',
     message: 'Something is broken.',

@@ -12,5 +12,8 @@
   ],
   "appService.defaultWebAppToDeploy": "/subscriptions/13304cca-660e-436e-b987-094937627256/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/cirrus-dave-test",
   "appService.deploySubpath": "dist",
-  "editor.formatOnSaveMode": "modifications"
+  "editor.formatOnSaveMode": "modifications",
+  "cSpell.words": [
+    "starwars"
+  ]
 }

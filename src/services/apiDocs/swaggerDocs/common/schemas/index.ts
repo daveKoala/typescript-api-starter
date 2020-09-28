@@ -69,3 +69,13 @@ export const Note = {
     },
   },
 };
+
+
+export const StarShip = {
+  properties: {
+    name: {
+      type: 'string',
+      example: 'x-wing',
+    },
+  },
+}

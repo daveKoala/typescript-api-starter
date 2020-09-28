@@ -1,6 +1,7 @@
 import app from './app';
 import { pingzRouter } from './services/pingz/pingz.router';
 import { noteRouter } from './services/notes/notes.router';
+import { starWarsRouter } from './services/starwars/starwars.router';
 import { apiDocsRouter } from './services/apiDocs/apiDocs.router';
 import { Request, Response, NextFunction } from 'express';
 import middleware from './middleware';
@@ -10,7 +11,9 @@ import errors from './lib/errors';
 app
   .use('/pingz', pingzRouter)
   .use('/note', noteRouter)
+  .use('/starwars', starWarsRouter)
   .use('/api-docs', apiDocsRouter);
+
 
 // Catch all and error handling
 app
